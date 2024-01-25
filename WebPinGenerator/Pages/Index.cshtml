@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+
+<h1>Web Pin Generator</h1>
+<div>Tool that allows you to create unique PIN codes for websites.</div>
+<hr />
+
+<div class="container">
+	<form method="post">
+		<div class="row">
+			<div class="col-9">
+				<input asp-for="PageUrl" class="form-control form-control-lg" placeholder="Paste your URL here" />
+			</div>
+			<div class="d-grid col-1">
+				<button type="submit" class="btn btn-primary btn-lg"><b>@@</b></button>
+			</div>
+			<div class="col-2">
+				<input asp-for="Pin" class="form-control form-control-lg" disabled readonly />
+			</div>
+		</div>
+		<span asp-validation-for="PageUrl" class="text-danger"></span>
+	</form>
+</div>
+
